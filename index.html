@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+        <style>
+            /* vamos a importar una fuente tipográfica desde  */
+
+            @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+            /* vamos a contradecir a Bootstrap, partiendo por la fuente tipográfica y afectando sus variables --> https://getbootstrap.com/docs/5.1/customize/css-variables/  */
+
+            :root {
+                --bs-body-font-family: "PT Serif", Georgia, serif;
+            }
+
+            /* vamos a ajustar los pesos de algunos títulos a lo que dispone la fuente  */
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-weight: 400;
+            }
+
+            /* vamos a ajustar los pesos de otros títulos y negrita a lo que dispone la fuente  */
+
+            h5,
+            h6,
+            strong {
+                font-weight: 700;
+            }
+
+            /* definiré un tamaño del título de primer nivel (h1) que se ajuste según el viewport width --> https://www.yunbitsoftware.com/blog/2017/06/22/viewport-units-css-que-es/ */
+
+            h1 {
+                font-size: calc(3rem + 1vw);
+            }
+
+            /* repetiré el truco anterior con el título de segundo nivel (h2), que, a diferencia del anterior, puedo ocupar varias veces en la misma página */
+
+            h2 {
+                font-size: calc(0.75rem + 1.25vw);
+            }
+
+            /* usaré el ">" entre el título se segundo nive (h2) y el lapso en la misma línea (span) --> https://techbrij.com/css-selector-adjacent-child-sibling */
+
+            h2 > span {
+                background: rgba(225, 112, 49, 1);
+                color: rgba(255, 255, 255, 1);
+            }
+
+            /* sigamos con el título de tercer nivel (h3) */
+
+            h3 {
+                font-size: calc(1.5rem + 1vw);
+            }
+        </style>
+
+        <title>Hello, world!</title>
+    </head>
+    <body>
+        <header class="container">
+            <div class="row">
+                <div class="col-sm-8 mx-auto">
+                    <h2 class="text-center pt-5 fst-italic"><span class="px-3 py-1">Tapirus Terrestris</span></h2>
+                    <h1 class="text-center py-4">Tapir Amazónico</h1>
+                    <p class="lead">
+                        Estos animales de cuerpo grueso son los mamíferos terrestres más grandes de sudamerica, Además, son considerados los "jardineros de la selva" por su rol en la vegetación de su habitat.
+                    </p>
+                    <p>
+                        Párrafo auxiliar donde pueden indicar otras maneras de denominarlo. Phasellus et lectus elit. Integer nec nunc ac urna lacinia posuere vitae vitae nisl. In velit ipsum, porta vel dapibus ac, pretium tristique dolor.
+                        Phasellus et fringilla sapien. Curabitur sed elit eget libero tempus semper. Fusce posuere ipsum sed sem sagittis luctus. Nam sit amet odio scelerisque, consequat purus eu, condimentum mauris.
+                    </p>
+                </div>
+                <div class="col-sm-11 mx-auto">
+                    <img src="img/2x1.png" alt="describa lo que se ve en la imagen" class="w-100 my-3" />
+                    <h4 class="text-center pt-5 pb-2">Especie en riesgo</h4>
+                    <img src="img/4x1.png" alt="describa lo que se ve en la imagen" class="w-100 my-3" />
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="container">
+                <div class="row">
+                    <div class="col-sm-9 mx-auto">
+                        <h3 class="text-center pt-5 pb-2">Presencia</h3>
+                        <img src="img/2x1.png" alt="describa lo que se ve en la imagen" class="w-100" />
+                    </div>
+                    <div class="col-sm-11 mx-auto">
+                        <h5 class="text-center pt-5 pb-2">
+                            Título doble, primera parte<br />
+                            segunda parte
+                        </h5>
+                        <img src="img/2x1.png" alt="describa lo que se ve en la imagen" class="w-100" />
+                    </div>
+                    <div class="col-sm-9 mx-auto">
+                        <h3 class="text-center pt-5 pb-2">Conservación</h3>
+                        <img src="img/2x1.png" alt="describa lo que se ve en la imagen" class="w-100" />
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container-fluid g-0">
+                    <div class="row g-0">
+                        <div class="col-sm-12 mx-auto">
+                            <h3 class="text-center pt-5 pb-2">Asentamiento</h3>
+                            <img src="img/2x1.png" alt="describa lo que se ve en la imagen" class="w-100" />
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9 mx-auto">
+                            <div class="row pt-3 pb-5">
+                                <div class="col-sm-12 py-2"><h5>Simbología</h5></div>
+                                <div class="col-sm-4 py-2">
+                                    <dl class="row d-flex align-items-center">
+                                        <dt class="col-3"><img src="img/1x1.png" class="w-100"></dt><dd class="col-9"><small>Loren ipsum</small></dd>
+                                    </dl>
+                                </div>
+                                <div class="col-sm-4 py-2">
+                                    <dl class="row d-flex align-items-center">
+                                        <dt class="col-3"><img src="img/1x1.png" class="w-100"></dt><dd class="col-9"><small>Loren ipsum</small></dd>
+                                    </dl>
+                                </div>
+                                <div class="col-sm-4 py-2">
+                                    <dl class="row d-flex align-items-center">
+                                        <dt class="col-3"><img src="img/1x1.png" class="w-100"></dt><dd class="col-9"><small>Loren ipsum</small></dd>
+                                    </dl>
+                                </div>
+                                <div class="col-sm-12 py-2">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus eros, efficitur a eros at, eleifend rutrum est. Proin dolor nisl, hendrerit in dapibus vitae, molestie eu magna. Mauris at erat
+                                        neque. Nulla ut convallis elit. Donec venenatis quam quam, quis facilisis sapien ultricies ac. Proin ut commodo nibh, non bibendum dui. Vestibulum convallis efficitur metus, vel vestibulum libero
+                                        interdum quis. Ut varius sagittis sapien eget cursus. Morbi accumsan lectus nec sapien fermentum, a vestibulum nisl tempus. Pellentesque mollis nulla orci, id lobortis magna egestas quis. Nunc
+                                        molestie, purus a posuere dapibus, turpis orci ornare elit, in semper dui purus sed nulla. Aenean vitae pharetra sem. Etiam consequat urna a lorem efficitur, vitae venenatis nisl rutrum. Aliquam
+                                        dictum libero porttitor tellus consequat malesuada. Vivamus rhoncus ante ut libero pellentesque, luctus consectetur orci ultrices.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid g-0">
+                    <div class="row g-0">
+                        <div class="col-sm-12">
+                            <h3 class="text-center pt-5 pb-2">Familia</h3>
+                            <img src="img/2x1.png" alt="describa lo que se ve en la imagen" class="w-100" />
+                        </div>
+                        <div class="col-sm-8 py-5 mx-auto">
+                            <p class="px-2">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus eros, efficitur a eros at, eleifend rutrum est. Proin dolor nisl, hendrerit in dapibus vitae, molestie eu magna. Mauris at erat neque. Nulla
+                                ut convallis elit. Donec venenatis quam quam, quis facilisis sapien ultricies ac. Proin ut commodo nibh, non bibendum dui. Vestibulum convallis efficitur metus, vel vestibulum libero interdum quis. Ut varius
+                                sagittis sapien eget cursus. Morbi accumsan lectus nec sapien fermentum, a vestibulum nisl tempus. Pellentesque mollis nulla orci, id lobortis magna egestas quis. Nunc molestie, purus a posuere dapibus,
+                                turpis orci ornare elit, in semper dui purus sed nulla. Aenean vitae pharetra sem. Etiam consequat urna a lorem efficitur, vitae venenatis nisl rutrum. Aliquam dictum libero porttitor tellus consequat
+                                malesuada. Vivamus rhoncus ante ut libero pellentesque, luctus consectetur orci ultrices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="bg-dark text-white-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col py-5">
+                            <p class="text-center small">Lo dejaremos hasta aquí, por ahora</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>
