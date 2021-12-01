@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 300" style="enable-background:new 0 0 1000 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#AAAAAA;}
+	.st1{fill:#FFFFFF;}
+	.st2{font-family:"Roboto", sans-serif}
+	.st3{font-size:44.9608px;}
+	.st4{fill:#ff7700;}
+	.st5{font-size:35px;}
+	.st6{fill:none;stroke:#686969;stroke-linecap:round;}
+</style>
+
+
+
+
+
+
+<g id="ex">
+	<circle class="st0" cx="82.1" cy="228.7" r="46.4"/>
+	<text transform="matrix(1 0 0 1 54 245)" class="st1 st2 st3">EX</text>
+</g>
+<g id="ew">
+	<circle class="st0" cx="212.6" cy="228.7" r="46.4"/>
+	<text transform="matrix(1 0 0 1 180 245)" class="st1 st2 st3">EW</text>
+</g>
+<g id="cr">
+	<circle class="st0" cx="342.9" cy="228.7" r="46.4"/>
+	<text transform="matrix(1 0 0 1 313 245)" class="st1 st2 st3">CR</text>
+</g>
+<g id="en">
+	<circle class="st0" cx="473.6" cy="228.7" r="46.4"/>
+	<text transform="matrix(1 0 0 1 444 245)" class="st1 st2 st3">EN</text>
+</g>
+<g id="vu">
+	<circle class="st4" cx="603.8" cy="228.7" r="46.4"/>
+	<text transform="matrix(1 0 0 1 574 245)" class="st1 st2 st3">VU</text>
+</g>
+<g id="nt">
+	<circle class="st0" cx="734.1" cy="228.7" r="46.4"/>
+	<text transform="matrix(1 0 0 1 705 245)" class="st1 st2 st3">NT</text>
+</g>
+<g id="lc">
+	<circle class="st0" cx="865.6" cy="228.7" r="46.4"/>
+	<text transform="matrix(1 0 0 1 840 245)" class="st1 st2 st3">LC</text>
+</g>
+<g>
+<text transform="matrix(1 0 0 1 29.8186 54.2935)" class="st2 st5">Extinto</text>
+<text transform="matrix(1 0 0 1 382.5784 54.2935)" class="st2 st5">Amenazado</text>
+<text transform="matrix(1 0 0 1 760.9694 54.2935)" class="st2 st5">Preocupación</text>
+<text transform="matrix(1 0 0 1 812.2867 95.3477)" class="st2 st5">menor</text>
+</g>
+<line class="st6" x1="865.6" y1="119.4" x2="865.6" y2="162.5"/>
+<path class="st6" d="M279.3,162.5v-55.2c0-6,4.8-10.8,10.8-10.8h161.1c4.4,0,7.9-0.3,10.4-0.9c2.6-0.5,5-1.9,7-3.8
+	c2.6-3.3,4.1-6,4.3-8.6c0.2,2.6,1.7,5.3,4.3,8.6c2.1,2.1,4.4,3.3,7,3.8c2.6,0.5,6.2,0.9,10.4,0.9h163.2c6,0,10.8,4.8,10.8,10.8v55.2
+	"/>
+<line class="st6" x1="82.1" y1="77.9" x2="82.1" y2="162.5"/>
+</svg>
