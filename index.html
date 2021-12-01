@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
         <style>
-            /* vamos a importar una fuente tipográfica desde  */
+            /* AHORA VAMOS A IMPORTAR, DE UN VIAJE, DOS FUENTES Y SUS RESPECTIVOS PESOS */
 
-            @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+            @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap");
 
             /* vamos a contradecir a Bootstrap, partiendo por la fuente tipográfica y afectando sus variables --> https://getbootstrap.com/docs/5.1/customize/css-variables/  */
 
             :root {
-                --bs-body-font-family: "PT Serif", Georgia, serif;
+                --bs-body-font-family: "Roboto", sans-serif;
+                --bs-primary: #f70;
             }
 
             /* vamos a ajustar los pesos de algunos títulos a lo que dispone la fuente  */
@@ -25,33 +23,41 @@
             h3,
             h4 {
                 font-weight: 400;
+                font-family: "PT Serif", serif;
             }
 
             /* vamos a ajustar los pesos de otros títulos y negrita a lo que dispone la fuente  */
 
             h5,
-            h6,
-            strong {
+            h6 {
                 font-weight: 700;
+                font-family: "PT Serif", serif;
+            }
+
+            /* AQUÍ HAGO UN AJUSTE IDIOMÁTICO:  EL GRINGO ENFATIZA CON ITÁLICA. EN CASTELLANO NO LO HACEMOS ASÍ, ENFATIZAMOS CON PESO DE FUENTE, MANTENIENDO UN ESTILO NORMAL */
+
+            strong, b, em {
+                font-weight: 500;
+                font-style: normal;
             }
 
             /* definiré un tamaño del título de primer nivel (h1) que se ajuste según el viewport width --> https://www.yunbitsoftware.com/blog/2017/06/22/viewport-units-css-que-es/ */
 
             h1 {
-                font-size: calc(3rem + 1vw);
+                font-size: calc(3rem + 3vw);
             }
 
             /* repetiré el truco anterior con el título de segundo nivel (h2), que, a diferencia del anterior, puedo ocupar varias veces en la misma página */
 
             h2 {
-                font-size: calc(0.75rem + 1.25vw);
+                font-size: calc(0.75rem + 1vw);
             }
 
             /* usaré el ">" entre el título se segundo nive (h2) y el lapso en la misma línea (span) --> https://techbrij.com/css-selector-adjacent-child-sibling */
 
             h2 > span {
-                background: rgba(225, 112, 49, 1);
-                color: rgba(255, 255, 255, 1);
+                background: var(--bs-primary);
+                color: #fff;
             }
 
             /* sigamos con el título de tercer nivel (h3) */
@@ -59,120 +65,222 @@
             h3 {
                 font-size: calc(1.5rem + 1vw);
             }
+
+            @keyframes corre {
+                0%{left: 0; position: absolute;}
+                100%{left: calc(100% - 60px); position: absolute;}
+            }
+            
+            #lento{
+                animation: corre 10s normal forwards;
+            }
+
+            #veloz{
+                animation: corre 5s normal forwards;
+            }
         </style>
 
-        <title>Hello, world!</title>
+        <!--ESTO SERVIRÁ PARA COMPARAR UN ANTES Y UN DESPUÉS-->
+        <link href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css" rel="stylesheet" />
+
+        <title>Tapir Amazónico</title>
     </head>
     <body>
+        <!--ESTE ES EL ENCABEZADO-->
         <header class="container">
             <div class="row">
-                <div class="col-sm-8 mx-auto">
-                    <h2 class="text-center pt-5 fst-italic"><span class="px-3 py-1">Tapirus Terrestris</span></h2>
-                    <h1 class="text-center py-4">Tapir Amazónico</h1>
-                    <p class="lead">
-                        Estos animales de cuerpo grueso son los mamíferos terrestres más grandes de sudamerica, Además, son considerados los "jardineros de la selva" por su rol en la vegetación de su habitat.
+                <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                    
+                    <h2 class="text-center mt-5 fst-italic"><span class="px-2 py-1">Tapirus terrestris</span></h2>
+                    
+                    <h1 class="text-center py-3">Tapir Amazónico</h1>
+                    
+                    <p class="lead">El arquitecto de la selva</p>
+                    
+                    <p>Estos animales de cuerpo grueso son <em>los mamíferos terrestres más grandes de Sudamérica</em>. Además, son considerados los “jardineros de la selva” por su rol en la vegetación de su hábitat.
                     </p>
-                    <p>
-                        Párrafo auxiliar donde pueden indicar otras maneras de denominarlo. Phasellus et lectus elit. Integer nec nunc ac urna lacinia posuere vitae vitae nisl. In velit ipsum, porta vel dapibus ac, pretium tristique dolor.
-                        Phasellus et fringilla sapien. Curabitur sed elit eget libero tempus semper. Fusce posuere ipsum sed sem sagittis luctus. Nam sit amet odio scelerisque, consequat purus eu, condimentum mauris.
-                    </p>
-                </div>
-                <div class="col-sm-11 mx-auto">
-                    <img src="img/2x1.png" alt="describa lo que se ve en la imagen" class="w-100 my-3" />
-                    <h4 class="text-center pt-5 pb-2">Especie en riesgo</h4>
-                    <img src="img/4x1.png" alt="describa lo que se ve en la imagen" class="w-100 my-3" />
+
+                    <div class="text-center py-3 px-3 px-sm-2 px-md-1 px-lg-0">
+                        <!--Este elemento es afectado con JavaScript-->
+                        <object data="files/conservacion_lc.svg" type="image/svg+xml" id="conservacion"></object>
+                        <!--Vean más abajo, las líneas 249 a 266-->
+                    </div>
+                    
+                    <!--Muestra el chucao chico o el grando, pero carga ambos-->
+                    <object data="files/tapir_ilustration_01.jpg" class="d-md-none"></object>
+                    <object data="files/tapir_ilustration_02.jpg" class="d-none d-md-block"></object>
+                    <!--Se muestra o no por una clase de Bootstrap que responde al ancho de pantalla-->
+
+                    <!--Acá se cargan dos audios, pero sonará uno-->
+                    <div class="mx-auto px-3 py-2 rounded-pill shadow-sm" style="width:220px; background:#ddd">
+                        <audio id="elAudio">
+                            <source src="files/tapir_sonido.mp3" type="audio/mpeg">
+                            <source src="files/tapir_sonido.ogg" type="audio/ogg">
+                        </audio>
+                        <div class="form-check form-switch text-center">
+                            <input class="form-check-input" type="checkbox" id="elSwitch">
+                            <label class="form-check-label" for="elSwitch">Escucha al Tapir</label>
+                        </div>
+                    </div>
+                    <!--Suena con JavaScript, ver líneas 267 a 278--> 
                 </div>
             </div>
         </header>
+        <!--ESTE ES EL CONTENIDO PRINCIPAL-->
         <main>
-            <section class="container">
-                <div class="row">
-                    <div class="col-sm-9 mx-auto">
-                        <h3 class="text-center pt-5 pb-2">Presencia</h3>
-                        <img src="img/2x1.png" alt="describa lo que se ve en la imagen" class="w-100" />
-                    </div>
-                    <div class="col-sm-11 mx-auto">
-                        <h5 class="text-center pt-5 pb-2">
-                            Título doble, primera parte<br />
-                            segunda parte
-                        </h5>
-                        <img src="img/2x1.png" alt="describa lo que se ve en la imagen" class="w-100" />
-                    </div>
-                    <div class="col-sm-9 mx-auto">
-                        <h3 class="text-center pt-5 pb-2">Conservación</h3>
-                        <img src="img/2x1.png" alt="describa lo que se ve en la imagen" class="w-100" />
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="container-fluid g-0">
-                    <div class="row g-0">
-                        <div class="col-sm-12 mx-auto">
-                            <h3 class="text-center pt-5 pb-2">Asentamiento</h3>
-                            <img src="img/2x1.png" alt="describa lo que se ve en la imagen" class="w-100" />
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-9 mx-auto">
-                            <div class="row pt-3 pb-5">
-                                <div class="col-sm-12 py-2"><h5>Simbología</h5></div>
-                                <div class="col-sm-4 py-2">
-                                    <dl class="row d-flex align-items-center">
-                                        <dt class="col-3"><img src="img/1x1.png" class="w-100"></dt><dd class="col-9"><small>Loren ipsum</small></dd>
-                                    </dl>
+            <section class="container-fluid g-0">
+                <div class="row g-0">
+                    <div class="col-8 mx-auto py-3">
+                        <h3 class="text-center pt-5 pb-2">Jardinero de la Selva</h3>
+                        <!--VAMOS A INCLUIR TRES SVG EN UN CARRUSEL-->
+                        <div id="carruselConMapa" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carruselConMapa" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carruselConMapa" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="1000">
+                                    <object class="d-block w-100" data="files/mapa_gnrl.svg" type="image/svg+xml"></object>
+                                    <div class="carousel-caption">
+                                    </div>
                                 </div>
-                                <div class="col-sm-4 py-2">
-                                    <dl class="row d-flex align-items-center">
-                                        <dt class="col-3"><img src="img/1x1.png" class="w-100"></dt><dd class="col-9"><small>Loren ipsum</small></dd>
-                                    </dl>
+                                <div class="carousel-item" data-bs-interval="1000">
+                                    <object class="d-block w-100" data="files/mapa_zona.svg" type="image/svg+xml"></object>
+                                    <div class="carousel-caption">
+                                    </div>
                                 </div>
-                                <div class="col-sm-4 py-2">
-                                    <dl class="row d-flex align-items-center">
-                                        <dt class="col-3"><img src="img/1x1.png" class="w-100"></dt><dd class="col-9"><small>Loren ipsum</small></dd>
-                                    </dl>
-                                </div>
-                                <div class="col-sm-12 py-2">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus eros, efficitur a eros at, eleifend rutrum est. Proin dolor nisl, hendrerit in dapibus vitae, molestie eu magna. Mauris at erat
-                                        neque. Nulla ut convallis elit. Donec venenatis quam quam, quis facilisis sapien ultricies ac. Proin ut commodo nibh, non bibendum dui. Vestibulum convallis efficitur metus, vel vestibulum libero
-                                        interdum quis. Ut varius sagittis sapien eget cursus. Morbi accumsan lectus nec sapien fermentum, a vestibulum nisl tempus. Pellentesque mollis nulla orci, id lobortis magna egestas quis. Nunc
-                                        molestie, purus a posuere dapibus, turpis orci ornare elit, in semper dui purus sed nulla. Aenean vitae pharetra sem. Etiam consequat urna a lorem efficitur, vitae venenatis nisl rutrum. Aliquam
-                                        dictum libero porttitor tellus consequat malesuada. Vivamus rhoncus ante ut libero pellentesque, luctus consectetur orci ultrices.
-                                    </p>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid g-0">
-                    <div class="row g-0">
-                        <div class="col-sm-12">
-                            <h3 class="text-center pt-5 pb-2">Familia</h3>
-                            <img src="img/2x1.png" alt="describa lo que se ve en la imagen" class="w-100" />
-                        </div>
-                        <div class="col-sm-8 py-5 mx-auto">
-                            <p class="px-2">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus eros, efficitur a eros at, eleifend rutrum est. Proin dolor nisl, hendrerit in dapibus vitae, molestie eu magna. Mauris at erat neque. Nulla
-                                ut convallis elit. Donec venenatis quam quam, quis facilisis sapien ultricies ac. Proin ut commodo nibh, non bibendum dui. Vestibulum convallis efficitur metus, vel vestibulum libero interdum quis. Ut varius
-                                sagittis sapien eget cursus. Morbi accumsan lectus nec sapien fermentum, a vestibulum nisl tempus. Pellentesque mollis nulla orci, id lobortis magna egestas quis. Nunc molestie, purus a posuere dapibus,
-                                turpis orci ornare elit, in semper dui purus sed nulla. Aenean vitae pharetra sem. Etiam consequat urna a lorem efficitur, vitae venenatis nisl rutrum. Aliquam dictum libero porttitor tellus consequat
-                                malesuada. Vivamus rhoncus ante ut libero pellentesque, luctus consectetur orci ultrices.
-                            </p>
-                        </div>
+            </section>
+            <section class="container">
+                <div class="row">
+                    <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto mt-3 mb-5">
+                        <p>Son vitales en la diversidad y riqueza de bosques en los que habitan, ya que dispersan semillas en sus fecas. Además, al ser selectivos con sus alimentos, pueden manipular qué tipo de vegetación crece en el lugar.</p>
                     </div>
                 </div>
             </section>
-            <footer class="bg-dark text-white-50">
-                <div class="container">
-                    <div class="row">
-                        <div class="col py-5">
-                            <p class="text-center small">Lo dejaremos hasta aquí, por ahora</p>
+
+            <section class="container">
+                <div class="row">
+                    
+                    <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                        <h4 class="text-center pt-5 pb-2">Tamaños</h4>
+                        <object data="files/grafico-tamanos.svg" type="image/svg+xml" class="my-3"></object>
+                        <p>Si vives en la ciudad, esta referencia te podría ser útil: <em>El tamaño de un chucao adulto está entre los tamaños de un gorrión y un zorzal</em>. Loren ipsum Nunc pulvinar laoreet nulla eget tincidunt. Donec interdum suscipit turpis, in mollis sapien bibendum dapibus. Aenean auctor sapien sit amet nisl rhoncus fringilla. Aliquam et varius mi, ut sodales arcu. Pellentesque tincidunt aliquet vulputate. Vestibulum tristique venenatis laoreet. Vivamus felis sem, commodo vel placerat nec, feugiat in purus.</p>
+                    </div>
+                    <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                        <h4 class="text-center pt-5 pb-2">Yuxtaposición de imágenes</h4>
+                        <div id="image-compare" class="my-3">
+                            <img src="files/beirut-antes.jpg" alt="Antes" />
+                            <img src="files/beirut-despues.jpg" alt="Después" />
                         </div>
+                        <p>Hay distintas formas de resolver, con JavaScript, una <a href="https://bashooka.com/coding/image-comparison-slider-javascript-libraries/" target="_blank">yuxtaposición imágenes</a>. En este caso ocupamos <a href="https://image-compare-viewer.netlify.app/" target="_blank">Imagen Comparte Viewer</a>, que ofrece su código de programación como una biblioteca de JavaScript complementada con un código de descripción de estilo (CSS). </p>
+                    </div>                    
+                        <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 mx-auto">
+                            <h4 class="text-center pt-5 pb-2">Animación</h4>
+                            <p>Recuerden que podemos animar SVG con CSS, como en el siguiente caso; donde tenemos un par de <a href="https://www.w3schools.com/css/css3_animations.asp" target="_blank">animaciones</a>, cada una con su <a href="https://www.w3schools.com/css/css3_2dtransforms.asp" target="_blank">transformación en 2D</a>:
+                            </p>
+                            <object class="mx-5" data="files/el-grito.svg" type="image/svg+xml"></object>
+                            <p class="text-center mx-5 mb-5 small text-muted">Este es el saco gural o faringeo del Siamang, que puede inflarse hasta alcanzar el tamaño de su cabeza. Está presente en macho y hembra. Se trata de una característica morfológica única que los distingue de otros gibones.</p>
+                            <p class="mb-5">Como ya se dijo, hay formas <a href="https://css-tricks.com/guide-svg-animations-smil/" target="_blank" rel="noopener noreferrer">más complejas de animar SVG</a>, donde no se utiliza CSS, sino el mismo primer lenguaje. De tal forma se resuelven las animaciones de <strong>Movements and maneuvers </strong> en <a href="https://multimedia.scmp.com/culture/article/ufo/" target="_blank" rel="noopener noreferrer">Are we alone?</a>, un trabajo de Adolfo Arranz y Pablo Robles, publicado en el South China Morning Post.</p>
+                            <p>También hay formas de animar con CSS y HTML, sin SVG, pero eso lo podremos ver la próxima sesión, sobre <a href="https://github.com/profesorfaco/infografia/tree/main/clase-4" target="_blank">JavaScript: Datos y bibliotecas</a>:</p>
+                            <div class="row mb-5" id="final">
+                                <div class="col-12" style="position:relative; height:60px;">
+                                    <img src="files/corre-atrasado.gif" width="60" height="60">
+                                </div>
+                                <div class="col-12" style="position:relative; height:60px;">
+                                    <img src="files/corre-atrasado.gif" width="60" height="60">
+                                </div>
+                            </div>                                
                     </div>
                 </div>
-            </footer>
+            </section>
         </main>
+        <!--ESTE ES EL PIE DE PÁGINA-->
+        <footer class="bg-dark text-white-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col py-5">
+                        <p class="text-center small">Lo dejaremos hasta aquí, por ahora</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--EN EL SCRIPT QUE SIGUE AJUSTA EL SVG DEL ESTADO DE CONSERVACIÓN AL ANCHO DE LA VENTANA-->        
+        <script>
+            window.addEventListener("DOMContentLoaded", elAjuste);
+            window.addEventListener("resize", elAjuste);
+            var ajustable = document.getElementById("conservacion");
+            function elAjuste() {
+                if (window.innerWidth >= 1000) {
+                    ajustable.className = "";
+                    ajustable.classList.add("w-50");
+                } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
+                    ajustable.className = "";
+                    ajustable.classList.add("w-75");
+                } else {
+                    ajustable.className = "";
+                    ajustable.classList.add("w-100");
+                }
+            }
+        </script>
+        <!--CON EL SIGUIENTE SCRIPT HAGO CANTAR AL CHUCAO-->
+        <script>
+            var canto = document.getElementById("elAudio"); 
+            var boton = document.getElementById("elSwitch");
+            boton.addEventListener('change', function() {
+                if (this.checked) {
+                    canto.play();
+                } else {
+                    canto.pause();
+                }
+            });
+        </script>
+        <!--CON EL SIGUIENTE SCRIPT CAMBIO LOS OJOS DE NOCHE A DÍA-->
+        <script>
+            function getValue(radio) {
+                if (radio.value == "nocturno") {
+                    document.getElementById("poca_luz").classList.remove("d-none");
+                    document.getElementById("mucha_luz").classList.add("d-none");
+                } else {
+                    document.getElementById("poca_luz").classList.add("d-none");
+                    document.getElementById("mucha_luz").classList.remove("d-none");
+                }
+            }
+        </script>
+        <!--BOOTSTRAP, ADEMÁS DE UN CSS, OFRECE SU PROPIA BIBLIOTECA DE JAVASCRIPT-->        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <!--LO QUE SIGUE ES OTRA BIBLIOTECA DE JAVASCRIPT-->
+        <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+        <!--LO QUE SIGUE ES LA CONFIGURACIÓN DE LA COMPARACIÓN DE IMÁGENES-->
+        <script>
+            const element = document.querySelector("#image-compare");
+            const options = {
+                  controlColor: "#FF2525",
+                  controlShadow: true,
+                  addCircle: false,
+                  addCircleBlur: true,
+                  showLabels: true,
+                  labelOptions: {
+                    before: 'Antes',
+                    after: 'Despues',
+                    onHover: false
+                }
+            };
+            const viewer = new ImageCompare(element, options).mount();
+        </script>
+        <!--PARA QUE HOMERO CORRA UNA VEZ LLEGUEMOS AL FINAL-->
+        <script>
+            var f = document.querySelector("#final").offsetTop;
+            addEventListener("scroll",function () {
+                if (f > window.scrollY) {
+                    document.querySelector("#final").querySelectorAll("img")[0].setAttribute("id", "veloz");
+                    document.querySelector("#final").querySelectorAll("img")[1].setAttribute("id", "lento");
+                }
+            },false);
+        </script>
     </body>
 </html>
